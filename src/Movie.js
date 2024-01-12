@@ -1,35 +1,43 @@
-import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
+import { StyleSheet, View, Image, ScrollView, Text } from "react-native";
 
-const Movie = () => {
+const Movie = ({ imageUrl, header, description }) => {
   return (
-    <View style={styles.pic}>
-      <Image source={require("../images/Movie.png")} style={styles.image} />
-      <Image source={require("../images/ironman.jpg")} style={styles.image} />
-      <Image
-        source={require("../images/spider-man.jpg")}
-        style={styles.image}
-      />
-      <Image
-        source={require("../images/thor_love_and_thunder_dc.jpg")}
-        style={styles.image}
-      />
-    </View>
+    <ScrollView style={styles.scrollView}>
+      <View style={styles.pic}>
+        <Image source={imageUrl} style={styles.image} />
+        <Text source={header} style={styles.garchig}>
+          {header}
+        </Text>
+        <Text source={description}>{description}</Text>
+      </View>
+    </ScrollView>
   );
 };
 
-export default Movie;
-
 const styles = StyleSheet.create({
+  scrollView: {
+    flex: 1,
+    borderRadius: 12,
+  },
   image: {
-    // width: 200,
-    display: "flex",
-    // height: 300,
-    justifyContent: "center",
+    width: 200,
+    height: 300,
+    margin: 5,
   },
   pic: {
-    // width: 20,
-    // height: 20,
-    margin: 15,
+    flexDirection: "column",
+    flexWrap: "wrap",
+    justifyContent: "center",
+  },
+  garchig: {
+    fontWeight: "bold",
+    fontSize: 20,
+  },
+  desc: {
+    color: "black",
+    fontSize: 15,
   },
 });
+
+export default Movie;

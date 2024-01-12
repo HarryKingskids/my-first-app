@@ -33,10 +33,6 @@
 //   },
 // });
 import React, { useState } from "react";
-import MovieImage from "./images/Movie.png";
-import MovieImage1 from "./images/ironman.jpg";
-import MovieImage2 from "./images/spider-man.jpg";
-import MovieImage3 from "./images/thor_love_and_thunder_dc.jpg";
 import Movie from "./src/Movie.js";
 import {
   TouchableOpacity,
@@ -52,25 +48,25 @@ const App = () => {
   const list = [
     {
       id: "1",
-      img: MovieImage,
+      img: require("./images/Movie.png"),
       name: "Avengers Assemble RUN",
-      description: "Avengers assemble",
+      description: "Avengers assemble save the world",
     },
     {
       id: "2",
-      img: MovieImage1,
+      img: require("./images/ironman.jpg"),
       name: "Iron Man",
-      description: "Can Iron Man Save the World for us,",
+      description: "Can Iron Man Save the World for us",
     },
     {
       id: "3",
-      img: MovieImage2,
+      img: require("./images/spider-man.jpg"),
       name: "Spiderman",
       description: "Can Spiderman help people",
     },
     {
       id: "4",
-      img: MovieImage3,
+      img: require("./images/thor_love_and_thunder_dc.jpg"),
       name: "Thor love and thunder",
       description: "Thor falls in love",
     },
@@ -79,8 +75,8 @@ const App = () => {
   const [text, setText] = useState("");
   const [filteredMovies, setFilteredMovies] = useState([]);
 
-  const onTextChange = (e) => {
-    const searchText = e.target.value;
+  const onTextChange = (text) => {
+    const searchText = text;
     setText(searchText);
   };
 
@@ -90,7 +86,6 @@ const App = () => {
     );
     setFilteredMovies(filtered);
   };
-
   const displayMovies = filteredMovies.length > 0 ? filteredMovies : list;
 
   return (
@@ -98,40 +93,55 @@ const App = () => {
       <Text>Movie Films info</Text>
       <View>
         <TextInput
-          type="text"
           placeholder="Search"
           value={text}
-          onChange={onTextChange}
+          onChangeText={onTextChange}
         />
-        <TouchableOpacity onClick={handleSearch}>
+        <TouchableOpacity onPress={handleSearch}>
           <Text>Search</Text>
         </TouchableOpacity>
       </View>
 
-      <View style={styles.image}>
-        {/* <ScrollView style={styles.scrollView}> */}
-        {displayMovies.map((data) => (
-          <Movie
-            imageUrl={data.img}
-            header={data.name}
-            description={data.description}
-          />
-        ))}
-        {/* </ScrollView> */}
-      </View>
+      <ScrollView style={styles.scrollView}>
+        <View style={styles.image}>
+          {list.map((data) => (
+            <Movie
+              key={data.id}
+              imageUrl={data.img}
+              header={data.name}
+              description={data.description}
+            />
+          ))}
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
 
 export default App;
+
 const styles = StyleSheet.create({
-  image: {
+  container: {
     flex: 1,
-    backgroundColor: "blue",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop: 20,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
+    shadowOpacity: 0.51,
+    shadowRadius: 13.16,
+
+    elevation: 20,
   },
-  container: {},
   scrollView: {
     flex: 1,
-    backgroundColor: "red",
+  },
+  image: {
+    // flexDirection: "row",
+    // flexWrap: "wrap",
+    // justifyContent: "center",
   },
 });
