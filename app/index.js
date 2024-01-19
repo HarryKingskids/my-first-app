@@ -18,7 +18,7 @@ const Home = () => {
           <Text style={styles.linkText}>TicTac togloom</Text>
         </TouchableOpacity>
       </Link>
-      <Link href="instagram/about" asChild>
+      <Link href="instagram/FYP" asChild>
         <TouchableOpacity style={styles.linkButton}>
           <Text style={styles.linkText}>Instagram</Text>
         </TouchableOpacity>
