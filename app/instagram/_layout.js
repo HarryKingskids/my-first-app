@@ -3,7 +3,7 @@ import { AntDesign } from "@expo/vector-icons";
 
 export default function HomeLayout() {
   return (
-    <Tabs screenOptions={{ headerShown: true }}>
+    <Tabs screenOptions={{ headerShown: false }}>
       <Tabs.Screen
         name="FYP"
         options={{
@@ -12,7 +12,7 @@ export default function HomeLayout() {
         }}
       />
       <Tabs.Screen
-        name="about"
+        name="profile"
         options={{
           title: "Профайл",
           tabBarIcon: () => <AntDesign name="user" size={24} color="black" />,
