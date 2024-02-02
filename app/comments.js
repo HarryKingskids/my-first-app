@@ -4,17 +4,13 @@ import { StatusBar } from "expo-status-bar";
 import { postData } from "../data";
 import { useEffect } from "react";
 export default function Modal() {
-  // If the page was reloaded or navigated to directly, then the modal should be presented as
-  // a full screen page. You may need to change the UI to account for this.
-
-  // navigation буюу хуудас өөрчлөгдөх бүрт доторхи кодыг ажиллуулна
   const navigation = useNavigation();
 
   useEffect(() => {
     navigation.setOptions({
       headerShown: true,
       headerBackTitleVisible: false,
-      title: "Comments",
+      title: "comments",
     });
   }, [navigation]);
 

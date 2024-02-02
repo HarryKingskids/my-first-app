@@ -97,10 +97,10 @@ const PostDetail = ({ data }) => {
         <Text style={styles.desc}>{data.desc}</Text>
       </View>
 
-      {/* View Comments Button */}
+      {/* View comments Button */}
       {commentLength > 0 && (
         <TouchableOpacity
-          onPress={() => navigation.navigate("Comments", { postId })}
+          onPress={() => navigation.navigate("comments", { postId })}
         >
           <Text style={styles.viewAll}>View all {commentLength} comments</Text>
         </TouchableOpacity>

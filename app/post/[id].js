@@ -11,13 +11,17 @@ import React, { useEffect } from "react";
 import { Link, useLocalSearchParams, useNavigation } from "expo-router";
 import { postData } from "../../data";
 import { AntDesign, MaterialIcons, Feather } from "@expo/vector-icons";
-import PostDetail from "./../../components/PostDetail";
+import PostDetail from "../../components/PostDetail";
 
 const Post = () => {
   const navigation = useNavigation();
   const params = useLocalSearchParams();
+  // Үзүүлэх ёстой постын дугаар
   const postId = params.id;
+  // Бүх постын жагсаалтаас харуулах датагаа хайж олно
   const data = postData.find((post) => post.id == postId);
+
+  // navigation буюу хуудас өөрчлөгдөх бүрт доторхи кодыг ажиллуулна
   useEffect(() => {
     navigation.setOptions({ headerShown: true, headerBackTitleVisible: false });
   }, [navigation]);
@@ -31,15 +35,4 @@ const Post = () => {
 
 export default Post;
 
-const styles = StyleSheet.create({
-  userId: {
-    fontSize: 18,
-    fontWeight: "bold",
-  },
-  desc: {
-    fontSize: 18,
-  },
-  descContainer: {
-    flexDirection: "row",
-  },
-});
+const styles = StyleSheet.create({});

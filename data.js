@@ -114,7 +114,28 @@ export const postData = [
         img: "https://xsgames.co/randomusers/avatar.php?g=male",
       },
     ],
-    comments: [],
+    comments: [
+      {
+        userId: "aminul_xd",
+        img: "https://xsgames.co/randomusers/avatar.php?g=female",
+        comment: "Nice 😀",
+      },
+      {
+        userId: "tulga",
+        img: "https://xsgames.co/randomusers/assets/avatars/female/46.jpg",
+        comment: "Good..",
+      },
+      {
+        userId: "aminul_xd",
+        img: "https://xsgames.co/randomusers/avatar.php?g=female",
+        comment: "Very Nice 😀",
+      },
+      {
+        userId: "tulga",
+        img: "https://xsgames.co/randomusers/assets/avatars/female/46.jpg",
+        comment: "Very Good..",
+      },
+    ],
   },
 ];
 
@@ -148,5 +169,23 @@ export const stories = [
     id: 2,
     img: "https://xsgames.co/randomusers/avatar.php?g=male",
     userId: "bat_123",
+  },
+];
+export const chats = [
+  {
+    id: 1,
+    userId: "乡κz☣ʍᾋƉᾋȒᾋ♚",
+    img: "https://xsgames.co/randomusers/assets/avatars/female/46.jpg",
+    lastMsg: { text: "Nice", date: "19d" },
+    messageHistory: [{ text: "WHY U TOXIC", date: "29y" }],
+    seen: false,
+  },
+  {
+    id: 2,
+    userId: "𝖀𝖈𝖍𝖎𝖍𝖆 𝖎𝖙𝖆𝖈𝖍𝖎r",
+    img: "https://xsgames.co/randomusers/avatar.php?g=male",
+    lastMsg: { text: "Very Nice", date: "30y" },
+    messageHistory: [{ text: "BE MEAN TO 乡κz☣ʍᾋƉᾋȒᾋ♚ ", date: "30y" }],
+    seen: false,
   },
 ];

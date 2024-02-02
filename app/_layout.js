@@ -18,11 +18,18 @@ export default function HomeLayout() {
         />
         <Stack.Screen name="TicTac/TICTAC" options={{ title: "TicTac" }} />;
         <Stack.Screen name="post/[id]" options={{ title: "Khangai Post" }} />;
-        <Stack
-          screenOptions={{
-            headerShown: false,
+        <Stack.Screen
+          name="comments"
+          options={{
+            presentation: "modal",
           }}
-        ></Stack>
+        />
+        <Stack.Screen
+          name="profile"
+          options={{
+            presentation: "modal",
+          }}
+        />
       </Stack>
     </SafeAreaView>
   );
