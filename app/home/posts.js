@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import PagerView from "react-native-pager-view";
 import { Link } from "expo-router";
-
-const postImg = require("../../assets/Mask Group.png");
-const userImg = require("../../assets/Mask Group.png");
 const Posts = ({ data }) => {
   const [selectedTab, setSetselectedTab] = useState(0);
   const onPageChange = (data) => {
@@ -18,14 +15,10 @@ const Posts = ({ data }) => {
       <View style={styles.btnContainer}>
         <TouchableOpacity
           style={[styles.btn, selectedTab === 0 && styles.active]}
-        >
-          <Image source={postImg} style={styles.img} />
-        </TouchableOpacity>
+        ></TouchableOpacity>
         <TouchableOpacity
           style={[styles.btn, selectedTab === 1 && styles.active]}
-        >
-          <Image source={userImg} style={styles.img} />
-        </TouchableOpacity>
+        ></TouchableOpacity>
       </View>
       {/* Tab content */}
       <PagerView

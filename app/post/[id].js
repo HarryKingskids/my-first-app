@@ -4,11 +4,14 @@ import {
   StatusBar,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from "react-native";
 import React, { useEffect } from "react";
-import { useLocalSearchParams, useNavigation } from "expo-router";
+import { Link, useLocalSearchParams, useNavigation } from "expo-router";
 import { postData } from "../../data";
+import { AntDesign, MaterialIcons, Feather } from "@expo/vector-icons";
+import PostDetail from "./../../components/PostDetail";
 
 const Post = () => {
   const navigation = useNavigation();
@@ -21,15 +24,7 @@ const Post = () => {
 
   return (
     <SafeAreaView style={{ paddingTop: StatusBar.currentHeight }}>
-      <Image
-        source={{ uri: data.img }}
-        style={{ width: "100%", aspectRatio: 1 }}
-      />
-      <View style={styles.descContainer}>
-        <Text style={styles.userId}>{data.userId}</Text>
-        <Text style={styles.desc}> {data.desc}</Text>
-        <Text>{data.like}</Text>
-      </View>
+      <PostDetail data={data} />
     </SafeAreaView>
   );
 };
