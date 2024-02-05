@@ -7,7 +7,7 @@ import {
   View,
 } from "react-native";
 import React from "react";
-const border = require("./../assets/Ellipse 4 (2).png");
+const border = require("../../assets/img/story-border.png");
 const StoryItem = ({ data }) => {
   return (
     <TouchableOpacity style={styles.container}>
